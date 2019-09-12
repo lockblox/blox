@@ -73,14 +73,14 @@ bool operator!=(const block &lhs, const block &rhs) {
 bool operator<(const block &lhs, const block &rhs) {
   if ((lhs.data().empty() && !lhs.key().empty()) ||
       (rhs.data().empty() && !rhs.key().empty())) {
-    return lhs.key() < rhs.key(); // compare keys when data is not present
+    return lhs.key() < rhs.key();  // compare keys when data is not present
   } else if (lhs.key().empty() || rhs.key().empty()) {
-    return lhs.data() < rhs.data(); // compare data when key is missing
+    return lhs.data() < rhs.data();  // compare data when key is missing
   } else {
-    return lhs.key() < rhs.key(); // default to key comparison
+    return lhs.key() < rhs.key();  // default to key comparison
   }
 }
 
 bool operator>(const block &lhs, const block &rhs) { return rhs < lhs; }
 
-} // namespace blox
+}  // namespace blox

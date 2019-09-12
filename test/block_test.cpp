@@ -7,9 +7,9 @@ TEST(block, equal) {
   auto a = blox::block("some data");
   auto b = blox::block("some other data");
   EXPECT_NE(a, b);
-  b = blox::block(a.key(), b.data()); // make keys match
+  b = blox::block(a.key(), b.data());  // make keys match
   EXPECT_EQ(a, b);
-  b = blox::block(a.key()); // no data in block b
+  b = blox::block(a.key());  // no data in block b
   EXPECT_EQ(a, b);
   auto a_copy = a;
   EXPECT_EQ(a_copy.key(), a.key());
@@ -54,4 +54,4 @@ TEST(block, store) {
   EXPECT_EQ(block, *it);
 }
 
-} // namespace test
+}  // namespace test

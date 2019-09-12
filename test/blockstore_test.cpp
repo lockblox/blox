@@ -30,4 +30,4 @@ TEST_F(blockstore, iteration) {
                          datastore.end()));
 }
 
-} // namespace test
+}  // namespace test

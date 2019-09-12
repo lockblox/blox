@@ -8,7 +8,7 @@ namespace blox {
 
 /** A non-owning block of data identified by a unique cryptographic hash */
 class block {
-public:
+ public:
   using key_type = multihash::digest<std::string_view>;
   using mapped_type = std::string_view;
 
@@ -52,7 +52,7 @@ public:
   /** Converts the block into a pair of string views */
   operator std::pair<const std::string_view, std::string_view>() const;
 
-private:
+ private:
   std::unique_ptr<char[]> buffer_;
   key_type key_;
   mapped_type data_;
@@ -69,4 +69,4 @@ bool operator<(const block &lhs, const block &rhs);
 
 /** Compares two blocks for ordering */
 bool operator>(const block &lhs, const block &rhs);
-} // namespace blox
+}  // namespace blox
